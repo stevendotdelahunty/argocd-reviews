@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: previews
+  project: reviews
   source:
     path: helm
     repoURL: https://github.com/vfarcic/{{.REPO}}.git
