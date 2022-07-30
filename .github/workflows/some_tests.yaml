@@ -1,0 +1,12 @@
+name: Run my super robust tests
+
+on:
+  pull_request:
+
+jobs:
+  build-push-trigger-reviewapp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        run: |
+          echo "DON'T CARE"
