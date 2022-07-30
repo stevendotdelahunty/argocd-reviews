@@ -8,9 +8,9 @@ metadata:
 spec:
   project: reviews
   source:
-    repoURL: https://github.com/stevendelahunty/argocd-reviews.git
+    repoURL: https://github.com/stevendotdelahunty/argocd-reviews.git
     targetRevision: HEAD
     path: helm
   destination:
     server: https://kubernetes.default.svc
-    namespace: previews
+    namespace: reviews
