@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: "APP_ID"
+  name: "pr-svc-review-app-one-2"
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -17,10 +17,10 @@ spec:
           repository: stevendelahunty/svc-review-app-one
           tag: 2
 #        ingress:
-#          host: APP_ID.devopstoolkitseries.com
+#          host: pr-svc-review-app-one-2.devopstoolkitseries.com
       version: v3
   destination:
-    namespace: "APP_ID"
+    namespace: "pr-svc-review-app-one-2"
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
