@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: "APP_ID"
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: reviews
+  source:
+    path: helm
+    repoURL: https://github.com/stevendelahunty/argocd-reviews.git
+    targetRevision: HEAD
+    helm:
+      values: |
+        image:
+          repository: stevendelahunty/svc-review-app-one
+          tag: 2
+#        ingress:
+#          host: APP_ID.devopstoolkitseries.com
+      version: v3
+  destination:
+    namespace: "APP_ID"
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
