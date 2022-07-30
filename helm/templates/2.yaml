@@ -9,7 +9,7 @@ spec:
   project: reviews
   source:
     path: helm
-    repoURL: https://github.com/stevendelahunty/argocd-reviews.git
+    repoURL: https://github.com/stevendotdelahunty/argocd-reviews.git
     targetRevision: HEAD
     helm:
       values: |
