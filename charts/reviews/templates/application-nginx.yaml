@@ -2,7 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: "nginx"
-  namespace: nginx
+#  namespace: nginx
+  namespace: reviews
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -25,7 +26,7 @@ spec:
           value: "128M"
       version: v3
   destination:
-    namespace: nginx
+    namespace: reviews
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
