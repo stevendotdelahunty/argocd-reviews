@@ -8,7 +8,7 @@ metadata:
 spec:
   project: reviews
   source:
-    path: charts/microservice/templates
+    path: charts/microservice
     repoURL: https://github.com/stevendotdelahunty/argocd-reviews.git
     targetRevision: HEAD
     helm:
