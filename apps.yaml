@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/stevendotdelahunty/argocd-reviews.git
     targetRevision: HEAD
-    path: helm
+    path: reviews
   destination:
     server: https://kubernetes.default.svc
     namespace: reviews
