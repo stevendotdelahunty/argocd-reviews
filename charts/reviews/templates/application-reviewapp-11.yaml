@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: "pr-svc-review-app-one-11"
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: reviews
+  source:
+    path: charts/microservice
+    repoURL: https://github.com/stevendotdelahunty/argocd-reviews.git
+    targetRevision: HEAD
+    helm:
+      values: |
+        image:
+          repository: stevendelahunty/svc-review-app-one
+          tag: 11
+      version: v3
+  destination:
+    namespace: "pr-svc-review-app-one-11"
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
